@@ -42,8 +42,8 @@ class Themes {
 				const paths = FS.readdirSync(userDirectory);
 				for (const dir of paths) {
 					try {
-						this.themes[dir] = require(OJD.getEnvPath(`${userDirectory}/${dir}/theme.json`));
-						this.themes[dir].directory = OJD.getEnvPath(`${userDirectory}/${dir}/`);
+						this.themes[dir] = require(OJD.getEnvPath(`${userDirectory}/theme.json`));
+						this.themes[dir].directory = OJD.getEnvPath(`${userDirectory}/`);
 						this.themes[dir].user = true;
 					} catch {
 						console.error(`Could not load user theme from directory: ${dir}`);
